@@ -2,17 +2,17 @@ import SwiftUI
 import shared
 
 struct ContentView: View {
-    let joke: String
+    let text: String
 	var body: some View {
-        Text(joke)
+        Text(text)
 	}
-    init(chuckResponse: ChuckNorrisResponse) {
-        joke = chuckResponse.value
+    init(displayText: String) {
+        text = displayText
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-	ContentView(chuckResponse: ChuckNorrisResponse(categories: [], createdAt: "", iconUrl: "", updatedAt: "", url: "", value: "Morsom vits"))
+	ContentView(displayText: "Test")
 	}
 }

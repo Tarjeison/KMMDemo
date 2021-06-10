@@ -1,0 +1,13 @@
+CREATE TABLE Chuck (
+  key INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  joke TEXT NOT NULL
+);
+
+insertItem:
+INSERT OR REPLACE INTO Chuck (key, joke) VALUES (?, ?);
+
+selectAll:
+SELECT * FROM Chuck ORDER BY key;
+
+deleteAll:
+DELETE FROM Chuck;

@@ -5,7 +5,7 @@ import shared
 struct iOSApp: App {
 	var body: some Scene {
 		WindowGroup {
-            ContentView(chuckResponse: ChuckNorrisResponse(categories: [], createdAt: "", iconUrl: "", updatedAt: "", url: "", value: "Morsom vits"))
+            ContentView(displayText: "Hei")
                 .onAppear(perform: {
                     ChuckNorrisRepository().getChuckNorrisFunFact { (chuckJokeResposne, error) in
                         print(chuckJokeResposne)
