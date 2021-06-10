@@ -19,11 +19,17 @@ class MainActivity : ComponentActivity() {
         val text = DataClassDemo().getInfo().infoText
         val animal = DataClassDemo().getAnimalCat()
         val time = SomeTime().getTimeNow()
+        appContext = this
+
         val joke = runBlocking {
             ChuckNorrisRepository().getChuckNorrisFunFact().value
         }
+
+        val joke2 = runBlocking {
+            ChuckNorrisOfflineRepository().getChuckNorrisFunFact()
+        }
         setContent {
-            Faglunsj(joke)
+            Faglunsj(joke2)
         }
     }
 }
