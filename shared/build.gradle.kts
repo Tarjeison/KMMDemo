@@ -32,9 +32,9 @@ kotlin {
         val ktorVersion = "1.5.4"
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2-native-mt")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-cio:$ktorVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3-native-mt")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.1.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
@@ -60,6 +60,11 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core") {
+                    version {
+                        strictly("1.4.3-native-mt")
+                    }
+                }
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
             }
         }
