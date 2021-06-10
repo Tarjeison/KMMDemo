@@ -20,6 +20,7 @@ class ChuckNorrisOfflineRepository {
 
     suspend fun getChuckNorrisFunFact(): String {
         return try {
+            throw (SocketTimeoutException(""))
             chuckNorrisClient.get<ChuckNorrisResponse>("https://api.chucknorris.io/jokes/random").value.also {
                 databaseHelper.insertJoke(it)
             }
